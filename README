@@ -1,10 +1,16 @@
 Setup a vagrant box running Ubuntu precise cloud image and OpenGeo.
-The host only IP is 192.168.241.10
-Avahi is also installed so MDNS is available. Once vagrant up returns
-you should be able to access http://opengeo.local:8080/dashboard
 
-To use
+- Avahi - host accessible as opengeo.local on Mac OS & Ubuntu
+- OpenGeo installed, dashboard available at http://opengeo.local:8080/dashboard
+- Postgres configured to listen on all network interfaces
+- Postgres user opengeo, password opengeo allow access over the network. PgAdmin 3 access tested
 
-git clone http://-----/opengeo-playbook
-cd opengeo-playbook
-vagrant up
+Installation
+============
+
+You need Virtualbox, vagrant, vagrant-ansible & ansible installed and working.
+
+$ git clone https://github.com/mattwillsh/opengeo-playbook.git
+$ cd opengeo-playbook
+$ vagrant up
+

@@ -1,0 +1,4 @@
+---     
+  - name: restart avahi-daemon
+    action: service name=avahi-daemon state=restarted
+

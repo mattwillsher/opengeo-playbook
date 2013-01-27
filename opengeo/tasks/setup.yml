@@ -1,0 +1,9 @@
+---
+ - name: Add OpenGeo GPG apt key
+   apt_key: url=http://apt.opengeo.org/gpg.key state=present
+
+ - name: Add OpenGeo APT repository
+   lineinfile: dest=/etc/apt/sources.list regexp=opengeo.org line='deb http://apt.opengeo.org/suite/v3/ubuntu lucid main' state=present
+
+ - name: Install OpenGeo Suite
+   apt: pkg=opengeo-suite state=present update_cache=yes

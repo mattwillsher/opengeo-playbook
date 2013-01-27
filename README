@@ -1,0 +1,10 @@
+Setup a vagrant box running Ubuntu precise cloud image and OpenGeo.
+The host only IP is 192.168.241.10
+Avahi is also installed so MDNS is available. Once vagrant up returns
+you should be able to access http://opengeo.local:8080/dashboard
+
+To use
+
+git clone http://-----/opengeo-playbook
+cd opengeo-playbook
+vagrant up

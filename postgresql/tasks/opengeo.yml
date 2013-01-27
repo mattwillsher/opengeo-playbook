@@ -1,0 +1,9 @@
+---
+ - name: Allow opengeo user access over Vagrant HO network
+   lineinfile: dest=/etc/postgresql/9.2/main/pg_hba.conf
+           regexp="host\s+all\s+opengeo\s+$mgmt_network"
+           line="host     all    opengeo    $mgmt_network    md5"
+           state=present
+   notify:
+    - Restart PostgreSQL
+

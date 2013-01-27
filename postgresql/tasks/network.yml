@@ -1,0 +1,8 @@
+---
+ - name: Make PostgreSQL listen on network
+   lineinfile: dest=/etc/postgresql/9.2/main/postgresql.conf
+      regexp='^#?listen_addresses\s='
+      line="listen_addresses = '*'"
+      state=present
+   notify:
+    - Restart PostgreSQL

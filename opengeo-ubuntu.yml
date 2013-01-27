@@ -1,0 +1,16 @@
+---
+# easy Ubuntu nginx playbook as an example.
+- hosts: opengeo-server
+  user: vagrant 
+  sudo: True
+  vars:
+       mgmt_network: '192.168.241.0/24'
+
+  tasks:
+     - include: avahi/tasks/setup.yml
+     - include: opengeo/tasks/setup.yml
+     - include: postgresql/tasks/opengeo.yml
+     - include: postgresql/tasks/network.yml
+
+  handlers:
+     - include: postgresql/handlers/handler.yml
